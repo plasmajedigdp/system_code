@@ -9,7 +9,5 @@ This Arduino sketch logs date, time, temperature, humidity and pressure in .csv 
 * Adafruit_Sensor
 * Adafruit_BMP085_U
 * DS3231
-[//]: # (List end)
 
  If there are any issues feel free to contact contact [MaxSGarcia](https://github.com/MaxSGarcia)
- 
