@@ -5,7 +5,7 @@ This Arduino sketch logs date, time, temperature, humidity and pressure in .csv 
 * SoftwareSerial (Arduino built in library)
 * SD (Arduino built in library)
 * Wire (Arduino built in library)
-* [DHT Sensor Library](system_code/libraries/DHT_sensor_library)
+* [DHT Sensor Library](DHT_sensor_library)
 * Adafruit_Sensor
 * Adafruit_BMP085_U
 * DS3231
