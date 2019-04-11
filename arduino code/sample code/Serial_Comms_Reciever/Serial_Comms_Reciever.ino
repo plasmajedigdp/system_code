@@ -29,14 +29,14 @@ void loop()
 
   if(byte_size >= 2)
   {
-    checksum = generate_checksum(data_recieved);
-
-    if(checksum == read_checksum(data_recieved))
+    //Data Recieved
+    if(read_checksum(data_recieved) == generate_checksum(data_recieved))
     {
       Serial.println("DATA APPROVED");
       print_current_state();
       Serial.println();
     }
+    //Data Corrupted
     else
     {
       Serial.println("DATA REJECTED");
@@ -63,7 +63,7 @@ uint8_t generate_checksum(uint8_t data)
 //Reading the incoming data for the arm state
 bool read_arm_state(uint16_t data)
 {
-  return(bitRead(data, 11));
+  return(bitRead(data, 0));
 }
 
 //Reading the incoming data for the throttle value
@@ -71,17 +71,17 @@ uint16_t read_throttle(uint16_t data)
 {
   uint16_t throttle_input;
   
-  bitWrite(throttle_input, 0, bitRead(data, 0));
-  bitWrite(throttle_input, 1, bitRead(data, 1));
-  bitWrite(throttle_input, 2, bitRead(data, 2));
-  bitWrite(throttle_input, 3, bitRead(data, 3));
-  bitWrite(throttle_input, 4, bitRead(data, 4));
-  bitWrite(throttle_input, 5, bitRead(data, 5));
-  bitWrite(throttle_input, 6, bitRead(data, 6));
-  bitWrite(throttle_input, 7, bitRead(data, 7));
-  bitWrite(throttle_input, 8, bitRead(data, 8));
-  bitWrite(throttle_input, 9, bitRead(data, 9));
-  bitWrite(throttle_input, 10, bitRead(data, 10));
+  bitWrite(throttle_input, 0, bitRead(data, 1));
+  bitWrite(throttle_input, 1, bitRead(data, 2));
+  bitWrite(throttle_input, 2, bitRead(data, 3));
+  bitWrite(throttle_input, 3, bitRead(data, 4));
+  bitWrite(throttle_input, 4, bitRead(data, 5));
+  bitWrite(throttle_input, 5, bitRead(data, 6));
+  bitWrite(throttle_input, 6, bitRead(data, 7));
+  bitWrite(throttle_input, 7, bitRead(data, 8));
+  bitWrite(throttle_input, 8, bitRead(data, 9));
+  bitWrite(throttle_input, 9, bitRead(data, 10));
+  bitWrite(throttle_input, 10, bitRead(data, 11));
 
   return(throttle_input);
 }
