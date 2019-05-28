@@ -3,7 +3,7 @@
 #include <Servo.h>
 
 //Define Software Serial
-SoftwareSerial comms(6, 5);
+SoftwareSerial comms(6, 5); //RX, TX
 
 //Define Motor
 Servo motor;
@@ -13,7 +13,7 @@ uint8_t ESC_PIN = 9; //Speed controller pin
 //Communication variables
 uint16_t data_recieved; //Variable to hold the data when it is read from comms
 uint8_t byte_size = 0; //Used to measure the size of the incoming bytes
-// - equals 1 for 8 bits, 2 for 16 bits
+// - set at 0, equals 1 for 8 incoming bits, 2 for 16 incoming bits
 
 uint16_t throttle_limit_up = 2000; //Upper Limit of the throttle
 uint16_t throttle_limit_dn = 1000; //Lower Limit of the throttle
