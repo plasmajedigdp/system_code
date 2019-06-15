@@ -1,5 +1,13 @@
-//Decided not to use an interrupt for button presses as this limits the number of pins
-//available
+/*
+This is the arduino code used to run the Remote Interface Device
+
+Hopefully it's documented enough to change for future uses, if any problems
+occur please contact Richard Gladdis at rg9g15@soton.ac.uk
+
+The current R.I.D. PCB has additional room for a plasma generator switch,
+this however is not programmed in so the current code may need to be changed
+to allow for the plasma switch signal to be sent along the serial data line
+*/
 
 //Include Libraries
 #include "SevenSegmentTM1637.h"
